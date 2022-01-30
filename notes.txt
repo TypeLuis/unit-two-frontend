@@ -1,0 +1,24 @@
+Names: My page
+
+
+
+Questions to ask:
+    - how to add music on page through api?
+
+    - how to show embeded youtube video
+
+
+- Create a table for dom events that links with users
+
+- After page setup, start with backend and test with postman before making the frontend main.js
+
+- add music section in page where users can add music / napster
+
+- api to search for youtube videos / https://tastedive.com/api/
+
+- a user can search for another user and see their post
+
+frontend Plan:
+
+    
+    

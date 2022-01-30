@@ -1,0 +1,577 @@
+html{
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    display: flex;
+   overflow-y: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    width: 195vmin;
+    height: 100vmin;
+}
+nav{
+    
+    color: white;
+    position: fixed;
+    top: 0vmin;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-right: 10vmin;
+    height: 8vmin;
+    align-items: center;
+    border-bottom:.3vmin solid rgb(2, 2, 2);
+    box-shadow: .3vmin .3vmin rgb(250, 130, 2);
+
+    
+}
+
+
+  
+
+
+nav span{
+    margin-right: 3vmin;
+    font-size:3.5vmin;
+    font-family: 'Architects Daughter', cursive;
+    
+}
+
+nav span:hover{
+    font-size: 3.7vmin;
+    cursor: pointer;
+    text-shadow:.2vmin .2vmin rgb(250, 130, 2);
+}
+
+
+#home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(252, 250, 250);
+    color:white;
+    width: 70vmin;
+    height: 50vmin;
+    border-radius: .8vmin;
+    border: .2vmin solid rgb(4, 4, 4);
+    box-shadow:-.5vmin -.8vmin  5vmin 5vmin rgba(250, 130, 2, 0.886);
+
+}
+
+#title{
+    width:65vmin;
+    color: black;
+    font-family: 'Architects Daughter', cursive;
+    text-align:center;
+    font-size: 7vmin;
+    text-shadow:.2vmin .2vmin rgb(250, 130, 2);
+}
+#signup-form{
+    padding: 2vmin;
+    background: rgb(250, 130, 2);
+    display: flex;
+    flex-direction: column;
+    height: 20vmin;
+    width: 30vmin;
+    align-self: center;
+    align-items: center;
+    justify-content:space-around;
+    border-radius: 1vmin;
+    border: .1vmin solid black;
+    
+}
+#signup-form label, #login-form label{
+    color: black;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 3vmin;
+}
+#signup-name, #signup-password{
+    height: 2vmin;
+    font-size: 2vmin;
+}
+
+#login-name,#login-password{
+    color: black;
+    height: 2vmin;
+    font-size: 2vmin;
+}
+
+.homePage-buttons{
+    margin-top: 2vmin;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 3vmin;
+    background: none;
+    border: none;
+}
+
+.homePage-buttons:hover{
+    cursor: pointer;
+    font-size: 3.7vmin;
+    text-shadow:.2vmin .2vmin rgb(249, 247, 246);
+}
+
+
+
+
+#signup-link,#logout-link {
+    display: none;
+}
+
+#login-form{
+    padding: 2vmin;
+    background: rgba(250, 171, 2, 0.79);
+    display: none;
+    flex-direction: column;
+    height: 20vmin;
+    width: 30vmin;
+    align-self: center;
+    align-items: center;
+    justify-content:space-around;
+    border-radius: 1vmin;
+    border: .3vmin solid black;
+}
+
+/*user page*/
+
+#settings-menu{
+    display: flex;
+    z-index: 1;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255, 0.817);
+    padding-top: 1vmin;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
+    border-radius: 1.3vmin;
+    border: .1vmin solid black;
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(0, 0, 0, 0.886);
+
+}
+#fonts{
+    height: 4vmin;
+    align-self: center;
+}
+option{
+    font-family: 'Architects Daughter';
+}
+.settings{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+    font-family: 'Architects Daughter';
+    font-size: 2.5vmin;
+    /* background: saddlebrown; */
+    padding: 1vmin;
+    justify-content: space-between;
+    
+}
+
+.domSubmit{
+    margin-bottom: 2vmin;
+    background: none;
+    border: none;
+    font-family: 'Architects daughter';
+    font-size: 2.1vmin;
+}
+
+.domSubmit:hover{
+    cursor: pointer;
+    font-size: 2.5vmin;
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+   
+}
+
+
+
+#video-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.851);
+    border: .1vmin solid black;
+    border-radius: 1vmin;
+    padding: 1vmin;
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(0, 0, 0, 0.886);
+    margin-left: 3vmin;
+    
+    
+}
+
+#video-form label, #user-form label, .edit-forms label{
+    font-size: 2.2vmin;
+    margin: 0vmin;
+}
+#videoButton{
+    margin-bottom: 2vmin;
+    background: none;
+    border: none;
+    font-family: 'Architects daughter';
+    font-size: 2.1vmin;
+}
+
+#videoButton:hover{
+    cursor: pointer;
+    font-size: 2.5vmin;
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+    background: none;
+}
+
+
+#user-form{
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    padding: 1vmin;
+    height: 11vmin;
+    background: rgba(255, 255, 255, 0.81);
+    border: .1vmin solid black;
+    border-radius: 1vmin;
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(18, 17, 17, 0.886);
+    
+}
+#search-form{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 8vmin;
+    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+    
+}
+
+ /* create a post form */
+#user-post{
+        max-height: 7vmin;
+        min-height: 6.8vmin;
+        max-width: 40vmin;
+        min-width: 39vmin;
+        text-align:left ;
+        overflow-wrap: break-word;
+        
+}
+#userSearch{
+    border: none;
+    background: none;
+    color: white;
+    font-family: 'Architects Daughter';
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+    font-size:2vmin;
+}
+#userSearch:hover{
+    cursor: pointer;
+    color: white;
+    font-size: 2.2vmin;
+}
+.edit-forms{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    padding: 1vmin;
+    align-self: center;
+    height: 11vmin;
+    background: rgba(255, 255, 255, 0.81);
+    border: .1vmin solid black;
+    border-radius: 1vmin;
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(18, 17, 17, 0.886);
+    
+
+    
+}
+
+.edit-forms textarea{
+    max-height: 6.9vmin;
+    min-height: 6.4vmin;
+    max-width: 40vmin;
+    min-width: 39vmin;
+    text-align:left ;
+    overflow-wrap: break-word;
+}
+.editButtons{
+    margin-bottom: 2vmin;
+    background: none;
+    border: none;
+    font-family: 'Architects daughter';
+    font-size: 2.1vmin;
+}
+
+.editButtons:hover{
+    cursor: pointer;
+    font-size: 2.5vmin;
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+    background: none;
+}
+
+#submissions {
+    padding: 3vmin;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    height: 12vmin;
+    z-index: 1;
+    display: flex;
+    justify-content:space-around;
+}
+
+
+#submissions form div{
+    font-display: flex;
+    padding: 1vmin;
+    height: 5vmin;
+  
+        
+}
+#submissions label{
+    text-align: center;
+    font-family: 'Architects daughter';
+}
+#uS-post{
+    margin-bottom: 2vmin;
+    background: none;
+    border: none;
+    font-family: 'Architects daughter';
+    font-size: 2.3vmin;
+}
+#uS-post:hover{
+    cursor: pointer;
+    font-size: 2.5vmin;
+    text-shadow: .1vmin .1vmin rgb(250, 130, 2);
+    background: none;
+}
+
+
+#user-page{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 4vmin;
+    right: 4vmin;
+    top:11vmin;
+    bottom: 9vmin;
+   
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: cadetblue;
+    opacity: .9;
+    border-radius: 1vmin;
+    border: .1vmin solid rgb(250, 130, 2);
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(250, 130, 2, 0.886);
+}
+#User-heading{
+    align-self: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 5vmin;
+    text-shadow: .2vmin .2vmin white;
+    margin: 0vmin;
+}
+
+
+
+
+
+footer{
+    
+    
+    color:black;
+    height:7vmin;
+    
+    position: fixed;
+    bottom: 0vmin;
+    width:300vmin ;
+    text-align: center;
+    left: 0vmin;
+    border-top:.3vmin solid rgb(250, 130, 2) ;
+}
+
+
+/* .submit:hover{
+    animation: fadeIn 5s;
+    /* -webkit makes animation available for chrome- */
+    /* -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s; */
+    /* background: skyblue; */
+    /* text-shadow: 2vmin 2vmin slateblue */
+
+
+
+
+/* Search Form */
+
+#search-form{
+    position: absolute;
+    left: 8vmin;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* creating post*/
+
+.posts{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 30vmin;
+    align-items: center;
+    padding: 1vmin;
+    margin-right: 1vmin;
+}
+.postButtons{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 15vmin;
+    height: 8vmin;
+    margin-left: 1vmin;
+}
+
+.edit-buttons, .delete-buttons, .deleteVideo{
+    background: rgba(255, 255, 255, 0.749);
+    font-family:'Architects Daughter' ;
+    border-radius: 1vmin;
+    border: .1vmin solid black;
+}
+.edit-buttons:hover, .delete-buttons:hover, .deleteVideo:hover{
+    cursor: pointer;
+    font-size: 1.6vmin;
+}
+.posts h1{
+    height: 10vmin;
+    background: rgba(219, 238, 238, 0.824);
+    border: .2vmin solid black;
+    /* min-width: 3vmin; */
+    margin: 0vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    box-sizing: border-box;
+    overflow: scroll;
+    overflow-wrap: break-word;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+}
+
+
+
+#bodyPage{
+    display: flex;
+    justify-content: space-between;
+    height: 52vmin;
+    position: absolute;
+    left: 5vmin;
+    right: 5vmin;
+    bottom: 3vmin;
+    background: rgb(44, 85, 162);
+    border-radius: 2vmin;
+    border: .3vmin solid black;
+    box-shadow:.1vmin -.3vmin  2vmin 1vmin rgba(9, 9, 9, 0.886);
+
+}
+#userPosts{
+    
+    width: 85vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3vmin;
+    margin-bottom: 4vmin;
+    box-sizing: border-box;
+    overflow:scroll;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+}
+#user-post-name{
+    font-family: 'Architects daughter';
+    font-size: 3.2vmin;
+    text-align:center ;
+    margin: 0vmin;
+    text-shadow: .08vmin .1vmin white;
+    background: none;
+}
+#user-posts{
+   
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 2vmin;
+    box-sizing: border-box;
+    overflow:scroll;
+    border-radius: .5vmin;
+    border: .2vmin solid black;
+
+}
+
+
+
+#videos{
+    background: rgb(255, 255, 255);
+    width: 85vmin;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-left: 3vmin;
+    margin-top: 4vmin;
+    margin-right: 3vmin;
+    margin-bottom: 4vmin;
+    padding: 3vmin;
+    border-radius: .5vmin;
+    border: .2vmin solid black;
+    box-sizing: border-box;
+    overflow:scroll;
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+}
+.videoContainer{
+    display: 'flex';
+}
+/* .youtube{
+    width: 40vmin;
+    height: 30vmin;
+    /* border: .2vmin solid black;
+    border-radius: .4vmin; }
+     */
+
+#settings-menu{
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:.4;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:.4;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:.4;
+    }
+    100% {
+        opacity:1;
+    }
+}

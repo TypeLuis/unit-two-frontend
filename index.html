@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPage</title>
+    <link rel="stylesheet" href="./style.css">
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.js"></script>
+    <script async defer src="./main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Petemoss&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="../imgs/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> -->
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="./imgs/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@100&family=Bebas+Neue&family=Fredericka+the+Great&family=Genos:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- links for navigation -->
+  <nav>
+    <form id="search-form">
+      <label for="search-user">Search for a user</label>
+      <input type="text" id="search-user">
+      <input type="submit" value="search" id="userSearch">
+    </form>
+    <span id="user-link" class="nav-link">User</span>
+    <span id="signup-link" class="nav-link">Sign Up</span>
+    <span id="login-link" class="nav-link">Login</span>
+    <span id="logout-link" class="nav-link">Logout</span>
+    <span id="settings-link" class="nav-link">Settings</span>  
+  </nav>
+  
+
+  <!-- page for the sign up and login -->
+  <section id="home-page">
+    <h1 id="title">My Page</h1>
+      <form id="signup-form">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name">
+        
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password">
+  
+        <input class="homePage-buttons" type="submit" value="Sign Up!" >
+      </form> 
+
+      <form id="login-form">
+        <label for="login-name">Name</label>
+        <input type="text" id="login-name">
+        
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password">
+  
+        <input class="homePage-buttons" type="submit" value="Log In">
+      </form> 
+</section>
+
+  <!-- page for user content -->
+  <section id="user-page">
+
+    <h1 id="User-heading"></h1>
+
+    <div id="settings-menu">
+      <!-- select and option creates a drop down list -->
+      <select name="style" id="fonts">
+        <option value="'Genos', sans-serif">Genos</option>
+        <option value="'Bebas Neue', cursive">Bebas Neue</option>
+        <option value="'Bangers', cursive">Bangers</option>
+        <option value="'Lucida Console', 'Courier New', monospace">Lucida Console</option>
+        <option value="'Fredericka the Great', cursive">Fredericka the Great</option>
+        <option value="'Barlow', sans-serif">Barlow</option>
+      </select>
+      <form class="settings" id="page-background">
+        <label for="page-background-text">Page Color</label>
+        <input type="text" id="page-background-text">
+        <input type="submit" value="Change" class="domSubmit">
+      </form>
+      <form class="settings" id="body-background">
+        <label for="body-background-text">Body Color</label>
+        <input type="text" id="body-background-text">
+        <input type="submit" value="Change" class="domSubmit">
+      </form>
+      <form class="settings" id="post-background">
+        <label for="post-background-text">Posts Color</label>
+        <input type="text" id="post-background-text">
+        <input type="submit" value="Change" class="domSubmit">
+      </form>
+      <form class="settings" id="video-background">
+        <label for="video-background-text">Videos Color</label>
+        <input type="text" id="video-background-text">
+        <input type="submit" value="Change" class="domSubmit">
+      </form>
+  </div>
+
+    
+    
+  <div id="submissions">
+      <form id="user-form">
+        <label for="user-post">What's on your mind?</label>
+        <div>
+        <textarea type="text" id="user-post"></textarea>
+        <input type="submit" value="Post" class="submit" id="uS-post">
+        </div>
+      </form>
+
+      <form id="video-form">
+        <label for="video-form">Add Videos</label>
+        <div>
+        <input type="text" id="user-video"></input>
+        <input type="submit" value="Video" class="submit" id="videoButton">
+        </div>
+      </form>
+  </div>
+  
+      
+    <section id="bodyPage">
+
+      <div id="userPosts">
+      <h1 id="user-post-name"></h1>
+      <div id="user-posts">
+      </div>
+      </div>
+      
+      <div id="videos">
+        
+      </div>
+      
+  
+    </section>
+  
+    
+    
+    
+
+</section>
+
+ <footer>
+  
+  
+ </footer>
+  
+</body>
+</html>

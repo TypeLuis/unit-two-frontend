@@ -1,0 +1,391 @@
+html{
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    display: flex;
+   overflow-y: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    width: 195vmin;
+    height: 100vmin;
+}
+nav{
+    
+    color: white;
+    position: fixed;
+    top: 0vmin;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-right: 10vmin;
+    height: 8vmin;
+    align-items: center;
+    border-bottom:.3vmin solid rgb(2, 2, 2);
+    box-shadow: .3vmin .3vmin rgb(250, 130, 2);
+
+    
+}
+
+
+  
+
+
+nav span{
+    margin-right: 3vmin;
+    font-size:3.5vmin;
+    font-family: 'Architects Daughter', cursive;
+    
+}
+
+nav span:hover{
+    font-size: 3.7vmin;
+    cursor: pointer;
+    text-shadow:.2vmin .2vmin rgb(250, 130, 2);
+}
+
+
+#home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(252, 250, 250);
+    color:white;
+    width: 70vmin;
+    height: 50vmin;
+    border-radius: .8vmin;
+    border: .2vmin solid rgb(4, 4, 4);
+    box-shadow:-.5vmin -.8vmin  6vmin 6vmin rgba(250, 130, 2, 0.886);
+
+}
+
+#title{
+    width:65vmin;
+    color: black;
+    font-family: 'Architects Daughter', cursive;
+    text-align:center;
+    font-size: 7vmin;
+    text-shadow:.2vmin .2vmin rgb(250, 130, 2);
+}
+#signup-form{
+    padding: 2vmin;
+    background: rgb(250, 130, 2);
+    display: flex;
+    flex-direction: column;
+    height: 20vmin;
+    width: 30vmin;
+    align-self: center;
+    align-items: center;
+    justify-content:space-around;
+    border-radius: 1vmin;
+    border: .1vmin solid black;
+    
+}
+#signup-form label, #login-form label{
+    color: black;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 3vmin;
+}
+#signup-name, #signup-password{
+    height: 2vmin;
+    font-size: 2vmin;
+}
+
+#login-name,#login-password{
+    color: black;
+    height: 2vmin;
+    font-size: 2vmin;
+}
+
+.homePage-buttons{
+    margin-top: 2vmin;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 3vmin;
+    background: none;
+    border: none;
+}
+
+.homePage-buttons:hover{
+    cursor: pointer;
+    font-size: 3.7vmin;
+    text-shadow:.2vmin .2vmin rgb(249, 247, 246);
+}
+
+
+
+
+#signup-link,#logout-link {
+    display: none;
+}
+
+#login-form{
+    padding: 2vmin;
+    background: rgba(250, 171, 2, 0.79);
+    display: none;
+    flex-direction: column;
+    height: 20vmin;
+    width: 30vmin;
+    align-self: center;
+    align-items: center;
+    justify-content:space-around;
+    border-radius: 1vmin;
+    border: .3vmin solid black;
+}
+
+/*user page*/
+
+#settings-menu{
+    display: flex;
+    z-index: 1;
+    justify-content: space-evenly;
+    background: rgb(225, 72, 72);
+
+}
+#fonts{
+    height: 4vmin;
+    align-self: center;
+}
+.settings{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: saddlebrown;
+    padding: 1vmin;
+    justify-content: space-between;
+}
+
+
+#submissions{
+    z-index: 1;
+    margin-bottom: 2vmin;
+    display: flex;
+    justify-content:space-around;
+    background: chartreuse;
+    height: 8vmin;
+    
+}
+#video-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(49, 210, 210);
+    padding: 1vmin;
+    
+}
+#user-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(49, 210, 210);
+    padding: 1vmin;
+    
+}
+.edit-forms{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 20vmin;
+    justify-content: space-around;
+    /* background-color: rgb(49, 210, 95); */
+    padding: 1vmin;
+    align-self: center;
+    
+
+    
+}
+
+.edit-forms textarea{
+    max-height: 7vmin;
+    max-width: 40vmin;
+    min-width: 39vmin;
+    text-align:left ;
+    overflow-wrap: break-word;
+}
+#submissions form div{
+    font-display: flex;
+    background-color: slategray;
+   
+}
+#submissions label{
+    text-align: center;
+    background-color: rgb(49, 210, 210);
+}
+
+#user-page{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: cadetblue;
+    position: absolute;
+    left: 4vmin;
+    right: 4vmin;
+    top:11vmin;
+    bottom: 8vmin;
+    display: none;
+    flex-direction: column;
+}
+
+.posts{
+    display: flex;
+    align-items: center;
+}
+.postButtons{
+    display:flex;
+    flex-direction: column;
+}
+
+
+
+footer{
+   
+  
+    color:black;
+    height:7vmin;
+    box-shadow:-1vmin -.3vmin rgb(250, 130, 2) ;
+    position: fixed;
+    bottom: 0vmin;
+    width:300vmin ;
+    text-align: center;
+    left: 0vmin;
+    border-top:.3vmin solid rgb(4, 4, 4)  ;
+}
+
+
+.submit:hover{
+    animation: fadeIn 5s;
+    /* -webkit makes animation available for chrome- */
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    background: skyblue;
+    text-shadow: 2vmin 2vmin slateblue
+}
+
+
+
+/* Search Form */
+
+#search-form{
+    position: absolute;
+    left: 8vmin;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* creating post*/
+
+.posts h1{
+    height: 5vmin;
+    background: cadetblue;
+    max-width: 60vmin;
+    margin: 2vmin;
+    font-size: 2vmin;
+    box-sizing: border-box;
+    overflow: scroll;
+    word-wrap: break-word;
+    
+    animation: fadeIn ease 7s;
+    -webkit-animation: fadeIn ease 7s;
+    -moz-animation: fadeIn ease 7s;
+}
+
+#user-form{
+
+background: silver;
+}
+
+#user-post{
+    max-height: 7vmin;
+    max-width: 40vmin;
+    min-width: 39vmin;
+    text-align:left ;
+    overflow-wrap: break-word;
+    
+}
+
+#bodyPage{
+    display: flex;
+    justify-content: space-between;
+    max-height: 68vmin;
+    position: absolute;
+    left: 5vmin;
+    right: 5vmin;
+    bottom: 3vmin;
+    background: rgb(44, 85, 162);
+
+}
+
+#user-posts{
+    background: white;
+    width: 80vmin;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 3vmin;
+    margin-top: 4vmin;
+    margin-bottom: 4vmin;
+    box-sizing: border-box;
+    overflow:scroll;
+
+}
+
+.edit-forms{
+    max-height: 1vmin;
+}
+
+#videos{
+    background: rgb(255, 255, 255);
+    width: 80vmin;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 3vmin;
+    margin-top: 4vmin;
+    margin-right: 3vmin;
+    margin-bottom: 4vmin;
+    box-sizing: border-box;
+    overflow:scroll;
+    animation: fadeIn ease 7s;
+    -webkit-animation: fadeIn ease 7s;
+    -moz-animation: fadeIn ease 7s;
+}
+
+
+#settings-menu{
+    animation: fadeIn ease 4s;
+    -webkit-animation: fadeIn ease 4s;
+    -moz-animation: fadeIn ease 4s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:.4;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:.4;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:.4;
+    }
+    100% {
+        opacity:1;
+    }
+}
