@@ -2,6 +2,7 @@
 
 const backendUrl = 'https://my-blog-backend-db.herokuapp.com'
 
+
 // h1 elements to get user's name and search name
 const heading = document.getElementById('User-heading')
 const userPostName = document.getElementById('user-post-name')
@@ -44,12 +45,30 @@ const videoList = document.getElementById("videos")
 // gets the list of drop down fonts in settings
 const fontList = document.getElementById('fonts')
 
-// determines if someone is editing code or not
+// determines if someone is editing post or not
 let editMode = false
 
 
 
 ///// FUNCTIONS ////
+
+
+// function that converts http to a link
+const httpToLink = (element)=>{
+    words = element.innerText.split(" ")    
+    for(let word of words){
+
+        // If the word's first 4 characters are http 
+        if(word.substring(0, 4) === "http"){    
+            
+            // creates a link attribute for the word, inside the link parameter is the link           
+            newWord = word.link(word)
+
+            //replaces the word for the new word string to remove the word           
+            element.innerHTML = element.innerHTML.replace(word, newWord)
+        }
+    }
+}
 
 
 // removes all the post displaying on page, it does not destroy the post itself
@@ -83,9 +102,13 @@ const setPostElement = (post, userId, postId)=>{
     // post is what the parameter is when function is called
     newPost.innerText = post
 
+    httpToLink(newPost)
+
     // append elements
     userList.append(article)
     article.append(newPost)
+
+    
 
     
 
@@ -115,7 +138,7 @@ const setPostElement = (post, userId, postId)=>{
         deleteButton.addEventListener('click', async ()=>{
 
             //api deletes post // postId is the parameter when function is called
-            await axios.delete(`${backendUrl}/user/posts/${postId}`,{
+            await axios.delete(`https://my-blog-backend-db.herokuapp.com/user/posts/${postId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -184,11 +207,13 @@ const setPostElement = (post, userId, postId)=>{
                     newPost.innerText = postVal
                     
                     //api edits specific post based on id // first object is body, second is headers
-                    await axios.put(`${backendUrl}/user/posts/${postId}`, {post: postVal} ,{
+                    await axios.put(`https://my-blog-backend-db.herokuapp.com/user/posts/${postId}`, {post: postVal} ,{
                         headers: {
                             authorization: localStorage.getItem('userId')
                         }
                     })
+
+                    httpToLink(newPost)
                     
                     // display post elements to display from screen
                     newPost.style.display = 'flex'
@@ -216,7 +241,7 @@ const seeUserPosts = async ()=>{
 
     
     // api gets all of user's post
-    const response = await axios.get(`${backendUrl}/user/posts`, {
+    const response = await axios.get(`https://my-blog-backend-db.herokuapp.com/user/posts`, {
         headers: {
             authorization: localStorage.getItem('userId')
         }
@@ -242,7 +267,7 @@ const setDom = async ()=>{
 
     // api gets all user's dom choices
     try{
-        const getDomResponse = await axios.get(`${backendUrl}/dom`,{
+        const getDomResponse = await axios.get('https://my-blog-backend-db.herokuapp.com/dom',{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -265,13 +290,13 @@ const setDom = async ()=>{
     }
     catch(TypeError){
         // api creates a dom table for the user
-        const createDomResponse = await axios.get(`${backendUrl}/dom/user/create`,{
+        const createDomResponse = await axios.get('https://my-blog-backend-db.herokuapp.com/dom/user/create',{
             headers: {
                 authorization: localStorage.getItem('userId')
             }
         })
 
-        const getDomResponse = await axios.get(`${backendUrl}/dom`,{
+        const getDomResponse = await axios.get('https://my-blog-backend-db.herokuapp.com/dom',{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -310,7 +335,7 @@ const seePosterName = async (string)=>{
 const seeUserVideos = async (even)=>{
 
     // api that gets all user's video
-    const response = await axios.get(`${backendUrl}/user/videos`, {
+    const response = await axios.get(`https://my-blog-backend-db.herokuapp.com/user/videos`, {
         headers: {
             authorization: localStorage.getItem('userId')
         }
@@ -351,7 +376,7 @@ const seeUserVideos = async (even)=>{
         delButton.addEventListener('click', async ()=>{
 
             // gets the id of each video itteration
-            await axios.delete(`${backendUrl}/user/videos/${videoId}`,{
+            await axios.delete(`https://my-blog-backend-db.herokuapp.com/user/videos/${videoId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -423,9 +448,12 @@ for(let nav of navlinks){
 
                 if(settingsMenu.style.display === "none"){
                     settingsMenu.style.display = "flex"
+                    submissions.style.display = "none"
+                    
                 }
                 else{
                     settingsMenu.style.display = "none"
+                    submissions.style.display = "flex"
                 }
             break
 
@@ -433,7 +461,7 @@ for(let nav of navlinks){
                 seeUserPosts() // function that shows every post that user created
 
                 seePosterName(localStorage.getItem('userName')) // displays the name of user's post in post body
-                
+
                 userLink.style.display = "none"
             break
 
@@ -467,7 +495,7 @@ for(let form of domForms){
             console.log(bodyObject) 
 
             // api that updates database based on user input
-            const changeColorResponse = await axios.put(`${backendUrl}/dom/user/update`,bodyObject,{
+            const changeColorResponse = await axios.put('https://my-blog-backend-db.herokuapp.com/dom/user/update',bodyObject,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -549,6 +577,11 @@ for(let form of domForms){
     })
 }
 
+
+
+
+
+
 //// FORM EVENT LISTENER //////
 
 // signup form for user to log in
@@ -566,7 +599,7 @@ signUpForm.addEventListener("submit", async(event)=>{
         document.querySelector('#signup-password').value = ""
         
         // api creates a user in the database
-        const signUpResponse = await axios.post(`${backendUrl}/user`,
+        const signUpResponse = await axios.post('https://my-blog-backend-db.herokuapp.com/user',
         {
             userName: user,
             password: password
@@ -581,7 +614,7 @@ signUpForm.addEventListener("submit", async(event)=>{
         localStorage.setItem('userId', userId)
 
         // api creates a dom table for the user
-        const createDomResponse = await axios.get(`${backendUrl}/dom/user/create`,{
+        const createDomResponse = await axios.get('https://my-blog-backend-db.herokuapp.com/dom/user/create',{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -619,7 +652,7 @@ loginForm.addEventListener("submit", async(event)=>{
         document.querySelector('#login-password').value = ""
         
         // api logs in if username and password match
-        const response = await axios.post(`${backendUrl}/user/login`,{
+        const response = await axios.post('https://my-blog-backend-db.herokuapp.com/user/login',{
             userName: user,
             password: password
         })
@@ -661,7 +694,7 @@ userForm.addEventListener('submit', async (event)=>{
         let id = localStorage.getItem('userId')
         
         // api creates a post associated with user
-        const response = await axios.post(`${backendUrl}/user/posts/${id}`, {
+        const response = await axios.post(`https://my-blog-backend-db.herokuapp.com/user/posts/${id}`, {
             post: post
         })
         
@@ -711,7 +744,7 @@ searchForm.addEventListener('submit', async(event)=>{
         await removePostElement() // removes all the post displaying on page
 
         // api searchs user by userName and gets all post
-        const response = await axios.post(`${backendUrl}/user/search`,{
+        const response = await axios.post('https://my-blog-backend-db.herokuapp.com/user/search',{
             userName: search
         })
         
@@ -762,7 +795,7 @@ videoForm.addEventListener('submit', async (event)=>{
         let id = localStorage.getItem('userId')
         
         // api adds video link to the database
-        const response = await axios.post(`${backendUrl}/user/videos/${id}`, {
+        const response = await axios.post(`https://my-blog-backend-db.herokuapp.com/user/videos/${id}`, {
             videoLink:video  
         })
 
@@ -799,7 +832,7 @@ videoForm.addEventListener('submit', async (event)=>{
         
         // deletes the video link inside the database
         delButton.addEventListener('click', async ()=>{
-            await axios.delete(`${backendUrl}/user/videos/${videoId}`,{
+            await axios.delete(`https://my-blog-backend-db.herokuapp.com/user/videos/${videoId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -823,7 +856,7 @@ fontList.addEventListener('change', async ()=>{
     userPage.style.fontFamily = fontStyle
     
 
-    const changeFontResponse = await axios.put(`${backendUrl}/dom/user/update`,{font: fontStyle},
+    const changeFontResponse = await axios.put('https://my-blog-backend-db.herokuapp.com/dom/user/update',{font: fontStyle},
     {
         headers: {
             authorization: localStorage.getItem('userId')
