@@ -1,6 +1,6 @@
 // DECLARING VARIABLES
 
-const backendUrl = 'http://localhost:3001'
+const backendUrl = 'https://my-blog-backend-db.herokuapp.com'
 
 // h1 elements to get user's name and search name
 const heading = document.getElementById('User-heading')
@@ -115,7 +115,7 @@ const setPostElement = (post, userId, postId)=>{
         deleteButton.addEventListener('click', async ()=>{
 
             //api deletes post // postId is the parameter when function is called
-            await axios.delete(`http://localhost:3001/user/posts/${postId}`,{
+            await axios.delete(`${backendUrl}/user/posts/${postId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -184,7 +184,7 @@ const setPostElement = (post, userId, postId)=>{
                     newPost.innerText = postVal
                     
                     //api edits specific post based on id // first object is body, second is headers
-                    await axios.put(`http://localhost:3001/user/posts/${postId}`, {post: postVal} ,{
+                    await axios.put(`${backendUrl}/user/posts/${postId}`, {post: postVal} ,{
                         headers: {
                             authorization: localStorage.getItem('userId')
                         }
@@ -216,7 +216,7 @@ const seeUserPosts = async ()=>{
 
     
     // api gets all of user's post
-    const response = await axios.get(`http://localhost:3001/user/posts`, {
+    const response = await axios.get(`${backendUrl}/user/posts`, {
         headers: {
             authorization: localStorage.getItem('userId')
         }
@@ -242,7 +242,7 @@ const setDom = async ()=>{
 
     // api gets all user's dom choices
     try{
-        const getDomResponse = await axios.get('http://localhost:3001/dom',{
+        const getDomResponse = await axios.get(`${backendUrl}/dom`,{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -265,13 +265,13 @@ const setDom = async ()=>{
     }
     catch(TypeError){
         // api creates a dom table for the user
-        const createDomResponse = await axios.get('http://localhost:3001/dom/user/create',{
+        const createDomResponse = await axios.get(`${backendUrl}/dom/user/create`,{
             headers: {
                 authorization: localStorage.getItem('userId')
             }
         })
 
-        const getDomResponse = await axios.get('http://localhost:3001/dom',{
+        const getDomResponse = await axios.get(`${backendUrl}/dom`,{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -310,7 +310,7 @@ const seePosterName = async (string)=>{
 const seeUserVideos = async (even)=>{
 
     // api that gets all user's video
-    const response = await axios.get(`http://localhost:3001/user/videos`, {
+    const response = await axios.get(`${backendUrl}/user/videos`, {
         headers: {
             authorization: localStorage.getItem('userId')
         }
@@ -351,7 +351,7 @@ const seeUserVideos = async (even)=>{
         delButton.addEventListener('click', async ()=>{
 
             // gets the id of each video itteration
-            await axios.delete(`http://localhost:3001/user/videos/${videoId}`,{
+            await axios.delete(`${backendUrl}/user/videos/${videoId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -467,7 +467,7 @@ for(let form of domForms){
             console.log(bodyObject) 
 
             // api that updates database based on user input
-            const changeColorResponse = await axios.put('http://localhost:3001/dom/user/update',bodyObject,{
+            const changeColorResponse = await axios.put(`${backendUrl}/dom/user/update`,bodyObject,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -566,7 +566,7 @@ signUpForm.addEventListener("submit", async(event)=>{
         document.querySelector('#signup-password').value = ""
         
         // api creates a user in the database
-        const signUpResponse = await axios.post('http://localhost:3001/user',
+        const signUpResponse = await axios.post(`${backendUrl}/user`,
         {
             userName: user,
             password: password
@@ -581,7 +581,7 @@ signUpForm.addEventListener("submit", async(event)=>{
         localStorage.setItem('userId', userId)
 
         // api creates a dom table for the user
-        const createDomResponse = await axios.get('http://localhost:3001/dom/user/create',{
+        const createDomResponse = await axios.get(`${backendUrl}/dom/user/create`,{
             headers: {
             authorization: localStorage.getItem('userId')
             }
@@ -619,7 +619,7 @@ loginForm.addEventListener("submit", async(event)=>{
         document.querySelector('#login-password').value = ""
         
         // api logs in if username and password match
-        const response = await axios.post('http://localhost:3001/user/login',{
+        const response = await axios.post(`${backendUrl}/user/login`,{
             userName: user,
             password: password
         })
@@ -661,7 +661,7 @@ userForm.addEventListener('submit', async (event)=>{
         let id = localStorage.getItem('userId')
         
         // api creates a post associated with user
-        const response = await axios.post(`http://localhost:3001/user/posts/${id}`, {
+        const response = await axios.post(`${backendUrl}/user/posts/${id}`, {
             post: post
         })
         
@@ -711,7 +711,7 @@ searchForm.addEventListener('submit', async(event)=>{
         await removePostElement() // removes all the post displaying on page
 
         // api searchs user by userName and gets all post
-        const response = await axios.post('http://localhost:3001/user/search',{
+        const response = await axios.post(`${backendUrl}/user/search`,{
             userName: search
         })
         
@@ -762,7 +762,7 @@ videoForm.addEventListener('submit', async (event)=>{
         let id = localStorage.getItem('userId')
         
         // api adds video link to the database
-        const response = await axios.post(`http://localhost:3001/user/videos/${id}`, {
+        const response = await axios.post(`${backendUrl}/user/videos/${id}`, {
             videoLink:video  
         })
 
@@ -799,7 +799,7 @@ videoForm.addEventListener('submit', async (event)=>{
         
         // deletes the video link inside the database
         delButton.addEventListener('click', async ()=>{
-            await axios.delete(`http://localhost:3001/user/videos/${videoId}`,{
+            await axios.delete(`${backendUrl}/user/videos/${videoId}`,{
                 headers: {
                     authorization: localStorage.getItem('userId')
                 }
@@ -823,7 +823,7 @@ fontList.addEventListener('change', async ()=>{
     userPage.style.fontFamily = fontStyle
     
 
-    const changeFontResponse = await axios.put('http://localhost:3001/dom/user/update',{font: fontStyle},
+    const changeFontResponse = await axios.put(`${backendUrl}/dom/user/update`,{font: fontStyle},
     {
         headers: {
             authorization: localStorage.getItem('userId')
